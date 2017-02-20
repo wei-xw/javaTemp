@@ -4,7 +4,7 @@ import java.io.IOException;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
-public class ReadExcel {
+public class ReadExcel {//文件位置path，读取内容为str的cell所在行的line列字段
 	public String readCell(int line,String str,String path){
 		Workbook rwb = null;
 		String str1 = null;
@@ -25,7 +25,7 @@ public class ReadExcel {
 		return str1;
 		
 	}
-	public static void readLine(){  //读取一列并去重，表格已排序
+	public static void readLine(){  //读取多列并去重，表格已排序。
 		String path ="D:\\back\\电警卡口信息.xls";
 		int rows = 0;
 		try {
