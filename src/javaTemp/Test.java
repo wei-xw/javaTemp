@@ -11,9 +11,8 @@ public class Test {
 	}
 	public static void main(String[] args) throws IOException{
 		stringSplit();
-		File file = new File("../option");
 		
-		System.out.println(file.length()+file.getPath());
+	
 		
 		
 	}

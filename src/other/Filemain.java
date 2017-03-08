@@ -1,10 +1,7 @@
 package other;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+
+import java.io.*;
 
 public class Filemain {
 	private static void readFile1(File fin) throws IOException {
@@ -20,9 +17,43 @@ public class Filemain {
 	 
 		br.close();
 	}
+	 public static void write(String path, String content, String encoding)  
+	            throws IOException {  
+	        File file = new File(path);  
+	       
+	      //  BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(  
+	          //      new FileOutputStream(file), encoding));  
+	        BufferedWriter writer=new BufferedWriter(new OutputStreamWriter(
+	        		new FileOutputStream(file), encoding));
+	        writer.write(content);  
+	        writer.close();  
+	    }  
+	  
+	    public static String read(String path, String encoding) throws IOException {  
+	        String content = "";  
+	        File file = new File(path);  
+	        BufferedReader reader = new BufferedReader(new InputStreamReader(  
+	                new FileInputStream(file), encoding));  
+	        String line = null;  
+	        while ((line = reader.readLine()) != null) {  
+	            content += line + "\n";  
+	        }  
+	        reader.close();  
+	        return content;  
+	    }  
+	  
+	    
+	        
 	public static void main(String[] args) throws IOException{
-		File file =new File("D://迅雷下载//2017-01-25");
+		File file =new File("../option");
 		readFile1(file);
+		System.out.println(file.getCanonicalPath());
+		String content = "中文内容fsdvsvsff";  
+        String path = "d:/test.txt";  
+       
+        write(path, content,"utf-8" );  
+        System.out.println(read(path, "utf-8"));  
+   
 }
 
 }

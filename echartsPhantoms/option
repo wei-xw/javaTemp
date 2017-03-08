@@ -1,4 +1,4 @@
-var option = {
+ï»¿var option = {
     backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
         offset: 0,
         color: '#f7f8fa'
@@ -7,7 +7,7 @@ var option = {
         color: '#cdd0d5'
     }]),
     title: {
-        text: '1990 Óë 2015 Äê¸÷¹ú¼ÒÈË¾ùÊÙÃüÓë GDP'
+        text: '1990 ä¸ 2015 å¹´å„å›½å®¶äººå‡å¯¿å‘½ä¸ GDP'
     },
     legend: {
         right: 10,

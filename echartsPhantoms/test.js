@@ -40,7 +40,7 @@
 					// force translate the key from infile to options.
 					key = 'options';
 					try {
-						map[key] = fs.read(system.args[i + 1]).replace(/^\s+/, '');
+						map[key] = fs.read(system.args[i + 1],{encoding:'ansi'}).replace(/^\s+/, '');
 						//console.log(map[key]);
 					} catch (e) {
 						console.log('Error: cannot find file, ' + system.args[i + 1]);
@@ -50,7 +50,7 @@
 				else if(key=='datafile'){
 				key='data';
 					try {  
-						map[key] = fs.read(system.args[i + 1]).replace(/^\s+/, '');
+						map[key] = fs.read(system.args[i + 1],{encoding:'ansi'}).replace(/^\s+/, '');
 					//	console.log(map[key]);
 					} catch (e) {
 						console.log('Error: cannot find file, ' + system.args[i + 1]);
@@ -58,8 +58,8 @@
 					}
 
 				}	else {
-					//map[key] = system.args[i + 1];
-					console.log(map[key]);
+					map[key] = system.args[i + 1];
+				//	console.log(map[key]);
 				}
 			}
 		}
@@ -68,7 +68,7 @@
 
 	render = function(params) {
 		var page = require('webpage').create(), createChart;
-
+		phantom.outputEncoding="utf-8";
 		page.onConsoleMessage = function(msg) {
 			console.log(msg);
 		};
