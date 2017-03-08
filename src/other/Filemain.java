@@ -4,7 +4,7 @@ package other;
 import java.io.*;
 
 public class Filemain {
-	private static void readFile1(File fin) throws IOException {
+	public static void readFile1(File fin) throws IOException {
 		FileInputStream fis = new FileInputStream(fin);
 	 
 		//Construct BufferedReader from InputStreamReader
