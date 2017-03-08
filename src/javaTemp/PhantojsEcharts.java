@@ -19,7 +19,7 @@ public class PhantojsEcharts {
 	        //return sbf.toString();   
 	    }   
 	   
-	    public static void main(String[] args) throws IOException {   
+	    public static void main(String[] args) throws IOException, InterruptedException {   
 	       //getAjaxCotnent("http://www.oicqzone.com");// 
 	       Runtime rt = Runtime.getRuntime();   
 	        Process p = rt.exec("phantomjs ../test.js -infile ../option -datafile ../data -outfile d:/t.png");
@@ -31,6 +31,19 @@ public class PhantojsEcharts {
 	            sbf.append(tmp);   
 	        }   
 	        System.out.println(sbf.toString()); 
+	       int i= p.waitFor();
+	       System.out.println(i);
+	        p = rt.exec("ping www.baidu.com");
+	        is = p.getInputStream();   
+	       br = new BufferedReader(new InputStreamReader(is));   
+	        sbf = new StringBuffer();   
+	       tmp = "";   
+	        while((tmp = br.readLine())!=null){   
+	        	 System.out.println(tmp);
+	        }   
+	        i= p.waitFor();
+		       System.out.println(i);
+	        
 	    }   
 
 }
