@@ -31,7 +31,7 @@ public class PhantojsEcharts {
 	            sbf.append(tmp);   
 	        }   
 	        System.out.println(sbf.toString()); 
-	       int i= p.waitFor();
+	       int i= p.waitFor();//p执行是否正常，正常返回0
 	       System.out.println(i);
 	        p = rt.exec("ping www.baidu.com");
 	        is = p.getInputStream();   
